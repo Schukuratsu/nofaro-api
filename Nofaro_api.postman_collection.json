@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "e7e74053-8c88-4c62-a9b2-f0dfda1e6f8b",
+		"name": "Nofaro api",
+		"description": "Lista de endpoints para testar a api do desafio Nofaro.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista todos os pets (Index)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/pets?page=2",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pets"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				},
+				"description": "{ QueryParamenters: { page: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna o pet selecionado (Show)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/pet/1",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pet",
+						"1"
+					]
+				},
+				"description": "{ PathParameters: { id: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Cria um novo pet (Store)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Bolinha",
+							"type": "text"
+						},
+						{
+							"key": "especie",
+							"value": "C",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "nofaro.test/api/v1/pet",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pet"
+					]
+				},
+				"description": "{ Body (form-data): { nome: String, especie: String ( 'C' || 'G' ) } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza um pet (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Rex\",\n    \"especie\": \"C\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "nofaro.test/api/v1/pet/1",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pet",
+						"1"
+					]
+				},
+				"description": "{ PathParameters: { id: Number }, Body (raw: JSON): { nome: String, especie: String ( 'C' || 'G' ) } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove o pet selecionado (Destroy)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/pet/15",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pet",
+						"15"
+					]
+				},
+				"description": "{ PathParameters: { id: Number } }"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5cffc7db-b9fc-4a09-bea5-8e4b5084cb31",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "105d3620-f096-4974-ab66-71018ef2e83a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
