@@ -1,3 +1,41 @@
+# Desafio Nofaro API
+
+## Sobre
+
+Este foi um desafio proposto a mim pela equipe da nofaro no processo de seleção, montar uma api utilizando Laravel e MySQL.
+
+## Testando a API
+
+Para testar a api eu disponibilizei um arquivo exportado do Postman (Nofaro_api_postman_collection.json) apontando para essa aplicação com deploy no Heroku (https://nofaro-api.herokuapp.com/), só precisa importar no Postman e a partir daí pode modificar como quiser para testar os endpoints, a paginação e a validação
+
+## Lista de endpoints
+
+### GET
+
+- https://nofaro-api.herokuapp.com/api/v1/pets?page=**1** | Lista todos os pets (Index)
+- https://nofaro-api.herokuapp.com/api/v1/pet/**1** | Retorna o pet selecionado (Show)
+- https://nofaro-api.herokuapp.com/api/v1/procurar-por-pet/**partialName**?page=**1** | Busca os pets por nome (QueryByPartialName)
+- https://nofaro-api.herokuapp.com/api/v1/atendimentos?page=**1** | Lista todos os atendimentos (Index)
+- https://nofaro-api.herokuapp.com/api/v1/atendimento/**1** | Retorna o atendimento selecionado (Show)
+- https://nofaro-api.herokuapp.com/api/v1/atendimentos-do-pet/**1**?page=**1** | Retorna os atendimentos do pet selecionado (QueryByPetId)
+
+### POST (enviar como BODY -> FORM-DATA ou BODY -> RAW -> JSON)
+
+- https://nofaro-api.herokuapp.com/api/v1/pet | Cria um novo pet (Store)
+- https://nofaro-api.herokuapp.com/api/v1/atendimento | Cria um novo atendimento (Store)
+
+### PUT (enviar como BODY -> RAW -> JSON)
+
+- https://nofaro-api.herokuapp.com/api/v1/pet/**1** | Atualiza um pet (Update)
+- https://nofaro-api.herokuapp.com/api/v1/atendimento/**1** | Atualiza um atendimento (Update)
+
+### DELETE
+
+-https://nofaro-api.herokuapp.com/api/v1/pet/**1** | Remove o pet selecionado (Destroy)
+-https://nofaro-api.herokuapp.com/api/v1/atendimento/**1** | Remove o atendimento selecionado (Destroy)
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
