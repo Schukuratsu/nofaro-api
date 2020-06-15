@@ -23,10 +23,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/pets?page=2",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/pets?page=2",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -61,10 +63,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/pet/1",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/pet/1",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -94,10 +98,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/procurar-por-pet/A",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/procurar-por-pet/A",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -147,10 +153,12 @@
 					}
 				},
 				"url": {
-					"raw": "nofaro.test/api/v1/pet",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/pet",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -188,10 +196,12 @@
 					}
 				},
 				"url": {
-					"raw": "nofaro.test/api/v1/pet/1",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/pet/1",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -221,10 +231,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/pet/15",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/pet/15",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -254,10 +266,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimentos?page=2",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimentos?page=2",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -292,10 +306,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimento/2",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimento/2",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -325,10 +341,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimentos-do-pet/30?page=1",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimentos-do-pet/30?page=1",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -389,10 +407,12 @@
 					}
 				},
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimento",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimento",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -422,7 +442,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"data\": \"20-6-17\",\n    \"descricao\": \"Morreu mas passa bem!\"\n}",
+					"raw": "{\n    \"data\": \"2020-6-17\",\n    \"descricao\": \"Morreu mas passa bem!\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -430,10 +450,12 @@
 					}
 				},
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimento/5",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimento/5",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -463,10 +485,12 @@
 					}
 				],
 				"url": {
-					"raw": "nofaro.test/api/v1/atendimento/7",
+					"raw": "https://nofaro-api.herokuapp.com/api/v1/atendimento/7",
+					"protocol": "https",
 					"host": [
-						"nofaro",
-						"test"
+						"nofaro-api",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
