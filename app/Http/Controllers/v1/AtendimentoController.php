@@ -36,8 +36,9 @@ class AtendimentoController extends Controller
     public function store(Request $request): AtendimentoResource
     {
         $request->validate([
-            'data' => 'required',
-            'pet_id' => 'required',
+            'data' => 'required|date',
+            'descricao' => 'nullable|string',
+            'pet_id' => 'required|numeric',
         ]);
         $atendimento = Atendimento::create($request->all());
         return new AtendimentoResource($atendimento);
@@ -49,8 +50,12 @@ class AtendimentoController extends Controller
      */
     public function update(Atendimento $atendimento, Request $request): AtendimentoResource
     {
+        $request->validate([
+            'data' => 'nullable|date',
+            'descricao' => 'nullable|string',
+            'pet_id' => 'nullable|numeric',
+        ]);
         $atendimento->update($request->all());
-
         return new AtendimentoResource($atendimento);
     }
 

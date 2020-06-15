@@ -7,6 +7,7 @@ use App\Http\Resources\v1\PetResource;
 use App\Http\Resources\v1\PetResourceCollection;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PetController extends Controller
 {
@@ -35,8 +36,8 @@ class PetController extends Controller
     public function store(Request $request): PetResource
     {
         $request->validate([
-            'nome' => 'required',
-            'especie' => 'required',
+            'nome' => 'required|string|min:2',
+            'especie' => ['required', Rule::in(['C', 'G'])],
         ]);
         $pet = Pet::create($request->all());
         return new PetResource($pet);
@@ -48,8 +49,11 @@ class PetController extends Controller
      */
     public function update(Pet $pet, Request $request): PetResource
     {
+        $request->validate([
+            'nome' => 'nullable|string|min:2',
+            'especie' => ['nullable', Rule::in(['C', 'G'])],
+        ]);
         $pet->update($request->all());
-
         return new PetResource($pet);
     }
 
