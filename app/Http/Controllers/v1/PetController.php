@@ -63,4 +63,13 @@ class PetController extends Controller
         $pet->delete();
         return response()->json();
     }
+
+    /**
+     * @param String $partialName
+     * @return PetResourceCollection
+     */
+    public function queryByPartialName($partialName){
+        $pets = Pet::where('nome','like','%' . $partialName . '%')->paginate();
+        return new PetResourceCollection($pets);
+    }
 }

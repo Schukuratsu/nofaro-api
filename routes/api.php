@@ -19,4 +19,12 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('/pet', 'v1\PetController')->only(['show', 'store', 'update', 'destroy']);
 
     Route::apiResource('/pets', 'v1\PetController')->only('index');
+
+    Route::get('/procurar-por-pet/{partialName}', 'v1\PetController@queryByPartialName');
+
+    Route::apiResource('/atendimento', 'v1\AtendimentoController')->only(['show', 'store', 'update', 'destroy']);
+
+    Route::apiResource('/atendimentos', 'v1\AtendimentoController')->only('index');
+
+    Route::get('/atendimentos-do-pet/{pet}', 'v1\AtendimentoController@queryByPetId');
 });
