@@ -36,7 +36,7 @@ class AtendimentoController extends Controller
     public function store(Request $request): AtendimentoResource
     {
         $request->validate([
-            'data' => 'required|date',
+            'data' => 'required|date|size:10',
             'descricao' => 'nullable|string',
             'pet_id' => 'required|numeric',
         ]);
@@ -51,7 +51,7 @@ class AtendimentoController extends Controller
     public function update(Atendimento $atendimento, Request $request): AtendimentoResource
     {
         $request->validate([
-            'data' => 'nullable|date',
+            'data' => 'nullable|date|size:10',
             'descricao' => 'nullable|string',
             'pet_id' => 'nullable|numeric',
         ]);
