@@ -78,6 +78,39 @@
 			"response": []
 		},
 		{
+			"name": "Busca os pets por nome (QueryByPartialName)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/procurar-por-pet/A",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"procurar-por-pet",
+						"A"
+					]
+				},
+				"description": "{ PathParameters: { partialName: String }, QueryParamenters: { page: Number } }"
+			},
+			"response": []
+		},
+		{
 			"name": "Cria um novo pet (Store)",
 			"request": {
 				"method": "POST",
@@ -125,7 +158,7 @@
 						"pet"
 					]
 				},
-				"description": "{ Body (form-data): { nome: String, especie: String ( 'C' || 'G' ) } }"
+				"description": "{ Body (form-data): { nome: String (length > 2), especie: String ( 'C' || 'G' ) } }"
 			},
 			"response": []
 		},
@@ -167,7 +200,7 @@
 						"1"
 					]
 				},
-				"description": "{ PathParameters: { id: Number }, Body (raw: JSON): { nome: String, especie: String ( 'C' || 'G' ) } }"
+				"description": "{ PathParameters: { id: Number }, Body (raw: JSON): { nome: String (length > 2), especie: String ( 'C' || 'G' ) } }"
 			},
 			"response": []
 		},
@@ -198,6 +231,248 @@
 						"v1",
 						"pet",
 						"15"
+					]
+				},
+				"description": "{ PathParameters: { id: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Lista todos os atendimentos (Index)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimentos?page=2",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimentos"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				},
+				"description": "{ QueryParamenters: { page: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna o atendimento selecionado (Show)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimento/2",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimento",
+						"2"
+					]
+				},
+				"description": "{ PathParameters: { id: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna os atendimentos do pet selecionado (QueryByPetId)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimentos-do-pet/30?page=1",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimentos-do-pet",
+						"30"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "{ PathParameters: { id: Number }, QueryParamenters: { page: Number } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Cria um novo atendimento (Store)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "2020-06-14",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "pet_id",
+							"value": "1",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimento",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimento"
+					]
+				},
+				"description": "{ Body (form-data): { data: Date (Y-m-d), descricao: String (opicional), pet_id: Number (id existente em Pet) } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza um atendimento (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": \"20-6-17\",\n    \"descricao\": \"Morreu mas passa bem!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimento/5",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimento",
+						"5"
+					]
+				},
+				"description": "{ PathParameters: { id: Number }, Body (raw: JSON): { data: Date (Y-m-d), descricao: String (opicional), pet_id: Number (id existente em Pet) } }"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove o atendimento selecionado (Destroy)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "nofaro.test/api/v1/atendimento/7",
+					"host": [
+						"nofaro",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"atendimento",
+						"7"
 					]
 				},
 				"description": "{ PathParameters: { id: Number } }"
